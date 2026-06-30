@@ -1,0 +1,95 @@
+{
+  "name": "lakepilot",
+  "displayName": "LakePilot",
+  "description": "Databricks-first adaptive orchestration for VS Code.",
+  "version": "0.0.1",
+  "publisher": "prashant-insight",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:lakepilot.runOrchestrationDemo",
+    "onCommand:lakepilot.plan",
+    "onCommand:lakepilot.work",
+    "onCommand:lakepilot.showDraftReview",
+    "onChatParticipant:lakepilot.orchestrator"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lakepilot.runOrchestrationDemo",
+        "title": "LakePilot: Run Orchestration Demo"
+      },
+      {
+        "command": "lakepilot.plan",
+        "title": "LakePilot: Plan With Databricks Workspace"
+      },
+      {
+        "command": "lakepilot.work",
+        "title": "LakePilot: Work With Databricks Workspace"
+      },
+      {
+        "command": "lakepilot.showDraftReview",
+        "title": "LakePilot: Show Draft Review"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "lakepilot.orchestrator",
+        "name": "lakepilot",
+        "description": "Plan and run approval-gated Databricks orchestration.",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "plan",
+            "description": "Create an adaptive LakePilot plan."
+          },
+          {
+            "name": "work",
+            "description": "Run LakePilot work mode."
+          },
+          {
+            "name": "orchestrate",
+            "description": "Alias of work mode."
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "LakePilot",
+      "properties": {
+        "lakepilot.deployment.autoApply": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run Databricks CLI deploy commands after approved Apply & Deploy actions when the CLI is available."
+        },
+        "lakepilot.deployment.outputFolder": {
+          "type": "string",
+          "default": ".lakepilot/deploy",
+          "description": "Workspace-relative folder for generated deployment drafts."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint src",
+    "pretest": "npm run compile && npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/mocha": "10.0.10",
+    "@types/node": "26.0.1",
+    "@types/vscode": "1.125.0",
+    "@vscode/test-cli": "0.0.15",
+    "@vscode/test-electron": "3.0.0",
+    "eslint": "10.6.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.62.1"
+  }
+}
