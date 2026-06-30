@@ -94,8 +94,8 @@ suite('LakePilot orchestration', () => {
     for (let index = 1; index < timestamps.length; index++) {
       assert.ok(timestamps[index] >= timestamps[index - 1]);
     }
-    assertPreviousApprovedBeforeRunning(sink.states, 'deployment-review', 'databricks-assets');
-    assertPreviousApprovedBeforeRunning(sink.states, 'business-report-review', 'powerbi-assets');
+    assertPreviousApprovedBeforeRunning(sink.states, 'business-report-review', 'databricks-assets');
+    assertPreviousApprovedBeforeRunning(sink.states, 'deployment-review', 'powerbi-assets');
     assertPreviousApprovedBeforeRunning(sink.states, 'semantic-model-review', 'external-connection');
   });
 
