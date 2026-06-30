@@ -1,0 +1,242 @@
+:root {
+  color: #152033;
+  background: #f5f7fb;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+:root[data-theme='dark'] {
+  color: #edf3ff;
+  background: #101624;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  background: #2458e6;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.85rem 1.25rem;
+}
+
+button:hover,
+button:focus-visible {
+  background: #173aa3;
+}
+
+button.secondary {
+  background: rgba(36, 88, 230, 0.12);
+  color: inherit;
+}
+
+#app {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 2rem;
+}
+
+.hero,
+.panel,
+.metric {
+  border: 1px solid rgba(93, 111, 143, 0.22);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(21, 32, 51, 0.08);
+}
+
+.hero {
+  align-items: center;
+  background: linear-gradient(135deg, #eaf0ff, #ffffff 58%, #eafcf5);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+:root[data-theme='dark'] .hero,
+:root[data-theme='dark'] .panel,
+:root[data-theme='dark'] .metric {
+  background: #172033;
+  border-color: rgba(237, 243, 255, 0.14);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hero-copy {
+  color: #516078;
+  font-size: 1.15rem;
+  max-width: 680px;
+}
+
+:root[data-theme='dark'] .hero-copy,
+:root[data-theme='dark'] .mitigation,
+:root[data-theme='dark'] .scenario small {
+  color: #b9c6dd;
+}
+
+.eyebrow {
+  color: #2458e6;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.grid,
+.risk-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin: 1.5rem 0;
+}
+
+.metric,
+.panel {
+  background: white;
+  padding: 1.5rem;
+}
+
+.metric span {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+
+.metric p,
+.mitigation,
+.scenario small {
+  color: #5d6f8f;
+  margin-bottom: 0;
+}
+
+.section-heading,
+.actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.scenario-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.scenario {
+  align-items: center;
+  border: 1px solid rgba(93, 111, 143, 0.2);
+  border-radius: 18px;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto 1fr auto;
+  padding: 1rem;
+}
+
+.scenario input {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.risk-card {
+  border: 1px solid rgba(93, 111, 143, 0.2);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.risk-level {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  padding: 0.25rem 0.65rem;
+}
+
+.risk-critical,
+.risk-high {
+  background: #ffe4e6;
+  color: #a3122a;
+}
+
+.risk-medium {
+  background: #fff4cf;
+  color: #8a5700;
+}
+
+.risk-low {
+  background: #dffbea;
+  color: #08713f;
+}
+
+textarea,
+pre {
+  border: 1px solid rgba(93, 111, 143, 0.25);
+  border-radius: 18px;
+  color: inherit;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+}
+
+textarea {
+  background: transparent;
+  resize: vertical;
+}
+
+pre {
+  background: rgba(36, 88, 230, 0.08);
+  min-height: 120px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 720px) {
+  #app {
+    padding: 1rem;
+  }
+
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .scenario {
+    grid-template-columns: auto 1fr;
+  }
+
+  .scenario small {
+    grid-column: 2;
+  }
+}
