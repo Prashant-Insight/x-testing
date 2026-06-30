@@ -1,0 +1,27 @@
+{
+  "name": "x-testing",
+  "version": "1.0.0",
+  "description": "Repository for testing purposes",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node --check playwright.config.js && node --check scripts/serve-static.js && node --check tests/e2e-performance.spec.js",
+    "lint": "npx playwright test --list",
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prashant-Insight/x-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Prashant-Insight/x-testing/issues"
+  },
+  "homepage": "https://github.com/Prashant-Insight/x-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}
